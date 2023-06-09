@@ -97,6 +97,9 @@ class Login extends StatelessWidget {
               ),
               style: TextStyle(fontSize: 20, color: Colors.orange),
             ),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               height: 40,
               alignment: Alignment.centerRight,

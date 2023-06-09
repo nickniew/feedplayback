@@ -1,7 +1,7 @@
 import 'package:feedplayback/view/LoginView.dart';
 import 'package:flutter/material.dart';
 
-class barra extends StatelessWidget {
+class sideMenuBar extends StatelessWidget {
   @override
   Widget build(BuildContext contexto){
     Widget cancela = ElevatedButton(
@@ -32,23 +32,29 @@ class barra extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          UserAccountsDrawerHeader(
-            accountName: Text('nickniew.com'),
-            accountEmail: Text('nickniew@gmail.com'),
-            currentAccountPicture: CircleAvatar(
-              child: ClipOval(
-                child: Image.network('https://i.pinimg.com/736x/2a/28/5a/2a285af8af62a57709571a27f88dabe7.jpg',
-                  fit: BoxFit.cover,
-                  width: 90,
-                  height: 90,
+          Container(
+            color: Colors.black,
+            child: UserAccountsDrawerHeader(
+              accountName: Text('nickniew.com'),
+              accountEmail: Text('nickniew@gmail.com'),
+              currentAccountPicture: CircleAvatar(
+                child: ClipOval(
+                  child: Image.network(
+                    'https://i.pinimg.com/736x/2a/28/5a/2a285af8af62a57709571a27f88dabe7.jpg',
+                    fit: BoxFit.cover,
+                    width: 90,
+                    height: 90,
+                  ),
                 ),
               ),
-            ),
-            decoration: const BoxDecoration(
-              color: Colors.blue,
-              image: DecorationImage(
+              decoration: const BoxDecoration(
+                color: Colors.orange,
+                image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: NetworkImage('https://i.pinimg.com/originals/d5/26/bb/d526bb65e677bee39422b683b2fffc47.jpg')
+                  image: NetworkImage(
+                    'https://i.pinimg.com/originals/d5/26/bb/d526bb65e677bee39422b683b2fffc47.jpg',
+                  ),
+                ),
               ),
             ),
           ),
@@ -81,10 +87,11 @@ class barra extends StatelessWidget {
             leading: Icon(Icons.exit_to_app),
             title: Text('Sair'),
             onTap: () => showDialog(
-                context: contexto,
-                builder: (BuildContext contexto){
-                  return sair;
-                }),
+              context: contexto,
+              builder: (BuildContext contexto) {
+                return sair;
+              },
+            ),
           ),
         ],
       ),

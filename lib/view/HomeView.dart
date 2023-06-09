@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:feedplayback/view/SideMenuView.dart';
 
 class HomeView extends StatelessWidget {
   @override
@@ -9,12 +10,6 @@ class HomeView extends StatelessWidget {
         backgroundColor: Colors.orange,
         title: Row(
           children: [
-            IconButton(
-              icon: const Icon(Icons.menu, color: Colors.black),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            ),
             const Expanded(
               child: TextField(
                 decoration: InputDecoration(
@@ -22,6 +17,7 @@ class HomeView extends StatelessWidget {
                 ),
               ),
             ),
+            Spacer(),
             IconButton(
               icon: const Icon(Icons.search, color: Colors.black),
               onPressed: () {
@@ -31,26 +27,7 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            const UserAccountsDrawerHeader(
-              accountName: Text('Seu Nome'),
-              accountEmail: Text('seuemail@example.com'),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('caminho/para/sua/imagem.jpg'),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: Text('Sair'),
-              onTap: () {
-                // Lógica para sair do aplicativo
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: sideMenuBar(),
       body: Container(
         color: Colors.black,
         child: Center(
@@ -96,9 +73,20 @@ class HomeView extends StatelessWidget {
         child: Container(
           height: 72.0, // Altura da barra inferior
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // ... outros widgets da barra inferior
+              IconButton(
+                icon: Icon(Icons.person),
+                onPressed: () {
+                  // Lógica para ação do botão de perfil
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.account_balance_wallet),
+                onPressed: () {
+                  // Lógica para ação do botão da carteira
+                },
+              ),
             ],
           ),
         ),
