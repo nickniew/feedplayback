@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:feedplayback/view/WalletView.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:feedplayback/view/SideMenuView.dart';
 
@@ -84,6 +85,12 @@ class HomeView extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.account_balance_wallet),
                 onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (contexto) => WalletView(),
+                    ),
+                  );
                   // Lógica para ação do botão da carteira
                 },
               ),
